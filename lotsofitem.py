@@ -48,7 +48,7 @@ catalogItem1 = CatalogItems(user_id=1, title="Basketball Ball", description="A b
 session.add(catalogItem1)
 session.commit()
 
-catalogItem2 = CatalogItems(user_id=1, title="Basketball Shoes", description="Basketball shoes are specifically designed for the intensity of the game. ... With constant jumping, starting and stopping, basketball shoes are designed to act as shock absorbers and provide ankle stability with the flexibility to allow players to move laterally.", catagories=catalog2)
+catalogItem2 = CatalogItems(user_id=1, title="Basketball Shoes", description="Basketball shoes are specifically designed for the intensity of the game.", catagories=catalog2)
 
 session.add(catalogItem2)
 session.commit()
