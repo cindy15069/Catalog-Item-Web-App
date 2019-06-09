@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="col-md-12 content-page">
+    <div class="col-md-12 delete_content">
+        <h1 class="title">Delete Item:</h1>
+        <p class="delete_message"> Are you sure you want to delete {{item.title}}? </p>
+        <div>
+            <form action="/catalog/{{item.id}}/delete" method = 'post'>
+                <button type="submit" value='Delete' class="btn btn-primary btn-md button_edit">Delete</button>
+                <a class="btn btn-primary btn-md" href="/catalog/{{item.catagories_id}}/{{item.id}}">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

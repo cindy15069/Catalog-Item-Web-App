@@ -1,0 +1,12 @@
+<div class="row top-menu">
+	<div class="col-md-6">
+		<a href="{{url_for('showCatagories')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Catalog App</a>
+	</div>
+	<div class="col-md-6 text-right">
+		{%if 'username' not in session %}
+		<a href="{{url_for('showLogin')}}"><h4 class="logout_button">Sign In</h4></a>
+		{% else %}
+		<a href="{{url_for('gdisconnect')}}"><h4 class="logout_button">Logout</h4></a>
+		{% endif %}
+	</div>
+</div>

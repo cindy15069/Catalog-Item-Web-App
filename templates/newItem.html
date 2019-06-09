@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="col-md-12 content-page">
+    <div class="col-md-12 add_content">
+        <h1 class="title">New Item:</h1>
+        <form action="/catalog/new" method = 'post'>  
+            <h3>Name:</h3>
+                <input class="name_input" type ='text' size='30' name='name'>
+            <h3>Description:</h3>
+                <textarea class="description_text" rows="4" cols="50" name="description"></textarea>
+            <h3>Catagory</h3>
+            <select class="option_input" name="catagories_section">
+                {%for categoryList in catagories%}
+                <option  value="{{categoryList}}" >{{categoryList}}</option>
+                {%endfor%}
+            </select>
+            <div>
+                <button type="submit" value='Create' class="btn btn-primary btn-md button_edit">Create</button>
+                <a class="btn btn-primary btn-md" href="/">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>    
+{% endblock %}

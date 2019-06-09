@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="col-md-12 content-page">
+    <div class="col-md-12 title_content">
+        <div class = 'pane'>
+            {% for catagories in catagories %}
+                <a href = "{{url_for('showCatagories', catagories_id=catagories.id)}}"><h1 class="title">{{catagories.name}} Items </h1> </a>
+            {% endfor %}
+            {% for i in items %}
+                <a href="{{url_for('showItem',catagories_id=i.catagories.id,id=i.id)}}"><ul><li><p class="item_name">{{i.title}}</p></li></ul></a>
+            {% endfor %}
+            <p class="add_button"><a href = "/catalog/new"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add Item</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
